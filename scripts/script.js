@@ -9,6 +9,11 @@ function CrearDiccionario() {
 function procesarTodo() {
 	let diccionario = CrearDiccionario()
 
+	const esIngles = document.getElementById('idioma-check').checked
+
+	if (!esIngles)
+		diccionario["ñ"] = 0
+
 	//Quito el texto del campo
 	let texto = document.getElementById("comment").value
 
