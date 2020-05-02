@@ -27,8 +27,13 @@ function procesarTodo() {
 	texto = texto.replace(/[ ]+/g, " ")
 
 	// Quito los espacios del principio y del final
-	texto = texto.replace(/^ /, "");
-	texto = texto.replace(/ $/, "");
+	texto = texto.trim()
+
+	// Valido el largo del texto
+	if (texto.length === 0) {
+		alert("Ingrese texto para calcular")
+		return
+	}
 
 	// Pongo todo en minuscula 
 	texto = texto.toLowerCase()
@@ -40,8 +45,9 @@ function procesarTodo() {
 			case ' ': {
 				break
 			}
+			case 'á':
 			case 'a': {
-				diccionario[c]++
+				diccionario['a']++
 				break
 			}
 			case 'b': {
@@ -56,8 +62,9 @@ function procesarTodo() {
 				diccionario[c]++
 				break
 			}
+			case 'é':
 			case 'e': {
-				diccionario[c]++
+				diccionario['e']++
 				break
 			}
 			case 'f': {
@@ -72,8 +79,9 @@ function procesarTodo() {
 				diccionario[c]++
 				break
 			}
+			case 'í':
 			case 'i': {
-				diccionario[c]++
+				diccionario['i']++
 				break
 			}
 			case 'j': {
@@ -96,8 +104,9 @@ function procesarTodo() {
 				diccionario[c]++
 				break
 			}
+			case 'ó':
 			case 'o': {
-				diccionario[c]++
+				diccionario['o']++
 				break
 			}
 			case 'p': {
@@ -120,8 +129,10 @@ function procesarTodo() {
 				diccionario[c]++
 				break
 			}
+			case 'ü':
+			case 'ú':
 			case 'u': {
-				diccionario[c]++
+				diccionario['u']++
 				break
 			}
 			case 'v': {
@@ -168,7 +179,7 @@ function procesarTodo() {
 	const numeroPalabras = textoTroceado.length;
 	document.getElementById(`cantidad-palabras`).textContent = numeroPalabras
 
-	const cantidadLetras = textoSoloCaracteresValidos.length
+	const cantidadLetras = textoSoloCaracteresValidos.replace(/[ ]+/g, "").length
 	for (const letra in diccionario) {
 		const prob = (diccionario[letra] * 100 / cantidadLetras).toFixed(4)
 		document.getElementById(`ocurrencia-${letra}`).textContent = prob + "%"
