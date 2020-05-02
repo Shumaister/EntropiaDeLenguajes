@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Entropia de Lenguajes</title>
-	
-	<script  type="text/javascript" src="scripts/script.js"></script>
+
+	<script type="text/javascript" src="scripts/script.js"></script>
 </head>
 
 <body>
@@ -25,28 +25,226 @@
 					<textarea class="form-control" rows="10" id="comment"></textarea>
 				</div>
 
+				<h5>En el caso del español se consideraran las mayusculas y minisculas como la misma letra, es decir,
+					"a" es
+					lo mismo que "A".</h5>
 				<br />
-				<button type="button" class="btn btn-primary" onclick="contar_palabras();">Calcular!</button>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<button type="button" class="btn btn-primary" onclick="procesarTodo();">Calcular!</button>
 			</div>
 		</div>
 
-		<div>
-			<h5>En el caso del español se consideraran las mayusculas y minisculas como la misma letra, es decir, "a" es
-				lo mismo que "A".</h5>
+		<br />
+
+		<div class="row">
+			<div class="col-md-3 text-center"></div>
+			<div class="col-md-6 text-center">
+				<table class="table ">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Letra</th>
+							<th scope="col">Probabilidad de Ocurrencia</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td id="letra-a">a</td>
+							<td id="ocurrencia-a">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">2</th>
+							<td id="letra-b">b</td>
+							<td id="ocurrencia-b">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">3</th>
+							<td id="letra-c">c</td>
+							<td id="ocurrencia-c">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">4</th>
+							<td id="letra-d">d</td>
+							<td id="ocurrencia-d">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">5</th>
+							<td id="letra-e">e</td>
+							<td id="ocurrencia-e">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">6</th>
+							<td id="letra-f">f</td>
+							<td id="ocurrencia-f">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">7</th>
+							<td id="letra-g">g</td>
+							<td id="ocurrencia-g">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">8</th>
+							<td id="letra-h">h</td>
+							<td id="ocurrencia-h">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">9</th>
+							<td id="letra-i">i</td>
+							<td id="ocurrencia-i">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">10</th>
+							<td id="letra-j">j</td>
+							<td id="ocurrencia-j">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">11</th>
+							<td id="letra-k">k</td>
+							<td id="ocurrencia-k">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">12</th>
+							<td id="letra-l">l</td>
+							<td id="ocurrencia-l">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">13</th>
+							<td id="letra-m">m</td>
+							<td id="ocurrencia-m">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">14</th>
+							<td id="letra-n">n</td>
+							<td id="ocurrencia-n">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">15</th>
+							<td id="letra-o">o</td>
+							<td id="ocurrencia-o">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">16</th>
+							<td id="letra-p">p</td>
+							<td id="ocurrencia-p">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">17</th>
+							<td id="letra-q">q</td>
+							<td id="ocurrencia-q">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">18</th>
+							<td id="letra-r">r</td>
+							<td id="ocurrencia-r">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">19</th>
+							<td id="letra-s">s</td>
+							<td id="ocurrencia-s">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">20</th>
+							<td id="letra-t">t</td>
+							<td id="ocurrencia-t">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">21</th>
+							<td id="letra-u">u</td>
+							<td id="ocurrencia-u">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">22</th>
+							<td id="letra-v">v</td>
+							<td id="ocurrencia-v">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">23</th>
+							<td id="letra-w">w</td>
+							<td id="ocurrencia-w">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">24</th>
+							<td id="letra-x">x</td>
+							<td id="ocurrencia-x">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">25</th>
+							<td id="letra-y">y</td>
+							<td id="ocurrencia-y">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">26</th>
+							<td id="letra-z">z</td>
+							<td id="ocurrencia-z">-</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th scope="row">27</th>
+							<td id="letra-ñ">ñ</td>
+							<td id="ocurrencia-ñ">-</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-3 text-center"></div>
 		</div>
 	</div>
-
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-
 </body>
 
 </html>
