@@ -7,11 +7,14 @@ function CrearDiccionario() {
 }
 
 function procesarTodo() {
+	// Creo el diccionario
 	let diccionario = CrearDiccionario()
 
+	// Definimos si es o no ingles
 	const esIngles = document.getElementById('idioma-check').checked
-
-	if (!esIngles)
+	if (esIngles)
+		document.getElementById(`ocurrencia-ñ`).textContent = "-"
+	else
 		diccionario["ñ"] = 0
 
 	//Quito el texto del campo
@@ -159,15 +162,15 @@ function procesarTodo() {
 	textoSoloCaracteresValidos = textoSoloCaracteresValidos.replace(/[ ]+/g, " ")
 
 	//Troceamos el texto por los espacios 
-	var textoTroceado = textoSoloCaracteresValidos.split(" ");
-	var numeroPalabras = textoTroceado.length; // Aca tenemos la cantidad de palabras
+	const textoTroceado = textoSoloCaracteresValidos.split(" ");
+
+	// Aca tenemos la cantidad de palabras
+	const numeroPalabras = textoTroceado.length;
+	document.getElementById(`cantidad-palabras`).textContent = numeroPalabras
 
 	const cantidadLetras = textoSoloCaracteresValidos.length
 	for (const letra in diccionario) {
 		const prob = (diccionario[letra] * 100 / cantidadLetras).toFixed(4)
 		document.getElementById(`ocurrencia-${letra}`).textContent = prob + "%"
 	}
-
-	//Mostramos el número de palabras
-	alert(numeroPalabras);
 }
