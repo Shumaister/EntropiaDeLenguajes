@@ -180,8 +180,20 @@ function procesarTodo() {
 	document.getElementById(`cantidad-palabras`).textContent = numeroPalabras
 
 	const cantidadLetras = textoSoloCaracteresValidos.replace(/[ ]+/g, "").length
+	let entropia = 0
+	let cantLetra = 0
+
 	for (const letra in diccionario) {
 		const prob = (diccionario[letra] * 100 / cantidadLetras).toFixed(4)
+		const entropiaLeta = Number.parseFloat(prob / 100)
+		entropia += entropiaLeta !== 0 ? (entropiaLeta * Math.log2(entropiaLeta)) : 0
 		document.getElementById(`ocurrencia-${letra}`).textContent = prob + "%"
+		cantLetra++
 	}
+
+	entropia = (entropia * (-1)).toFixed(4)
+	document.getElementById(`entropia`).textContent = entropia + " Sh/símbolo"
+
+	const entropiaMax = Math.log2(cantLetra).toFixed(4)
+	document.getElementById(`entropiaMaxima`).textContent = entropiaMax + " Sh/símbolo"
 }
